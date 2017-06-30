@@ -17,13 +17,13 @@
 # inherit from common c50
 -include device/lge/c50-common/BoardConfigCommon.mk
 
-TARGET_OTA_ASSERT_DEVICE := c50,ms345
+TARGET_OTA_ASSERT_DEVICE := c50,c50n
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/ms345/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/c50n/bluetooth
 
 # Kernel
-TARGET_KERNEL_CONFIG := cyanogenmod_ms345_defconfig
+TARGET_KERNEL_CONFIG := c50n_global_com-perf_defconfig
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 25165824
