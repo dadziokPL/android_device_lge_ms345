@@ -23,8 +23,9 @@ TARGET_OTA_ASSERT_DEVICE := c50,c50n
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/c50n/bluetooth
 
 # Kernel
-TARGET_KERNEL_CONFIG := c50n_global_com_defconfig
-TARGET_KERNEL_SOURCE := kernel/lge/c50n
+TARGET_PREBUILT_KERNEL := device/lge/c50n/kernel
+#TARGET_KERNEL_CONFIG := c50n_global_com_defconfig
+#TARGET_KERNEL_SOURCE := kernel/lge/c50n
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 25165824
