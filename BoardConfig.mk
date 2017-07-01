@@ -53,3 +53,4 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_REAL_SDCARD := true
 TW_NO_SCREEN_TIMEOUT := true
+PRODUCT_COPY_FILES += device/lge/c50n/twrp.fstab:recovery/root/etc/twrp.fstab
