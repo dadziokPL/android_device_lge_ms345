@@ -1,1 +1,1 @@
-add_lunch_combo cm_c50n-userdebug
+add_lunch_combo lineage_c50n-userdebug
