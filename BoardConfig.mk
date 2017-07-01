@@ -24,7 +24,11 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/c50n/bluetooth
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/lge/c50n
-TARGET_KERNEL_CONFIG := c50n_global_com-perf_defconfig
+TARGET_KERNEL_CONFIG := c50n_global_com_defconfig
+TARGET_KERNEL_ARCH := arm
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
+ARM_EABI_TOOLCHAIN:= $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
+KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 25165824
