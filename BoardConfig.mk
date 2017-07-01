@@ -26,6 +26,7 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/c50n/bluetooth
 TARGET_PREBUILT_KERNEL := device/lge/c50n/kernel
 #TARGET_KERNEL_CONFIG := c50n_global_com_defconfig
 #TARGET_KERNEL_SOURCE := kernel/lge/c50n
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x80008000 --ramdisk_offset 0x82000000 --tags_offset 0x80000100 --dt device/lge/c50n/dt.img
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 25165824
