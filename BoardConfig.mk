@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-# inherit from common c50
--include device/lge/c50-common/BoardConfigCommon.mk
+# inherit from common c50 - merged into c50n
+-include device/lge/c50n/BoardConfigc50Common.mk
 
 TARGET_OTA_ASSERT_DEVICE := c50,c50n
 

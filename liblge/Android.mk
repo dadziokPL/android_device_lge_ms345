@@ -1,4 +1,3 @@
-#
 # Copyright (C) 2015 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,12 +11,18 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+LOCAL_PATH := $(call my-dir)
 
-# Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/lge/c50n/c50n-vendor.mk)
+include $(CLEAR_VARS)
 
-# common c50 - merged into c50n
-$(call inherit-product, device/lge/c50n/c50.mk)
+LOCAL_SRC_FILES := \
+    lge_ril.cpp
+
+LOCAL_SHARED_LIBRARIES := libbinder
+
+LOCAL_MODULE := liblge
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+
+include $(BUILD_SHARED_LIBRARY)

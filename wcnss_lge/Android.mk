@@ -1,5 +1,4 @@
-#
-# Copyright (C) 2015 The CyanogenMod Project
+# Copyright (C) 2011 The CyanogenMod project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,12 +11,22 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+LOCAL_PATH:= $(call my-dir)
 
-# Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/lge/c50n/c50n-vendor.mk)
+ifeq ($(BOARD_VENDOR),lge)
+ifeq ($(TARGET_BOARD_PLATFORM),msm8916)
 
-# common c50 - merged into c50n
-$(call inherit-product, device/lge/c50n/c50.mk)
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := wcnss_lge_client.c
+LOCAL_C_INCLUDES += hardware/qcom/wlan/wcnss_service
+LOCAL_CFLAGS += -Wall
+LOCAL_SHARED_LIBRARIES := libc libcutils libutils liblog
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE := libwcnss_qmi
+
+include $(BUILD_SHARED_LIBRARY)
+
+endif
+endif

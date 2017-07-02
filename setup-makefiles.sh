@@ -4,4 +4,4 @@ set -e
 
 export VENDOR=lge
 export DEVICE=c50n
-./../../$VENDOR/c50-common/setup-makefiles.sh $@
+./../../$VENDOR/c50n/setup-makefiles-c50-common.sh $@

@@ -28,3 +28,20 @@ LOCAL_PATH := $(call my-dir)
 ifneq ($(filter c50n,$(TARGET_DEVICE)),)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 endif
+
+# msm8916 includes
+ifeq ($(BOARD_VENDOR),lge)
+ifeq ($(TARGET_BOARD_PLATFORM),msm8916)
+
+# include $(call all-makefiles-under,$(LOCAL_PATH))  - already moved for other files
+
+include $(CLEAR_VARS)
+
+$(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wcd9306; \
+        ln -sf /data/misc/audio/wcd9320_anc.bin \
+        $(TARGET_OUT_ETC)/firmware/wcd9306/wcd9306_anc.bin; \
+        ln -sf /data/misc/audio/mbhc.bin \
+        $(TARGET_OUT_ETC)/firmware/wcd9306/wcd9306_mbhc.bin)
+
+endif
+endif

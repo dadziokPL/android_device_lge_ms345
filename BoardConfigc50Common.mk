@@ -12,12 +12,21 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+# inherit from common msm8916 - merged into c50n
+-include device/lge/c50n/BoardConfigmsm8916Common.mk
 
-# Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/lge/c50n/c50n-vendor.mk)
+LOCAL_PATH := device/lge/c50n
 
-# common c50 - merged into c50n
-$(call inherit-product, device/lge/c50n/c50.mk)
+# Kernel
+BOARD_KERNEL_CMDLINE += vmalloc=504m
+
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
+
+# Recovery
+TARGET_RECOVERY_FSTAB := device/lge/c50n/rootdir/etc/fstab.qcom
+
+# SELinux
+#BOARD_SEPOLICY_DIRS += device/lge/c50-common/sepolicy
+#BOARD_SEPOLICY_UNION += \
