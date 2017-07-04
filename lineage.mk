@@ -5,7 +5,7 @@ $(call inherit-product, device/lge/c50n/full_c50n.mk)
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-PRODUCT_NAME := cm_c50n
+PRODUCT_NAME := lineage_c50n
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE="c50n" \
