@@ -25,9 +25,15 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/c50n/bluetooth
 # Kernel
 #TARGET_PREBUILT_KERNEL := device/lge/c50n/kernel
 TARGET_KERNEL_CONFIG := c50n_global_com_defconfig
+<<<<<<< HEAD
+TARGET_KERNEL_SOURCE := kernel/lge/msm8916
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x80008000 --ramdisk_offset 0x82000000 --tags_offset 0x80000100 --dt device/lge/c50n/dt.img
+
+=======
 TARGET_KERNEL_SOURCE := kernel/lge/c50n
 #BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x80008000 --ramdisk_offset 0x82000000 --tags_offset 0x80000100 --dt device/lge/c50n/dt.img
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=c50n user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=soc.0 lpm_levels.sleep_disabled=1 vmalloc=504m androidboot.selinux=permissive
+>>>>>>> 52d5410e8e452977ffecf13f010b0925c7c7950d
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 25165824
